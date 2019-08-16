@@ -1,9 +1,14 @@
-<div class="container col-6 mt-5">
-<h1>My list of cocktails</h1>
-<p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
-<br>
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path 'v9x5h3d1fp9eukejaqz5' %>');">
+
+
+  <div class="container col-6 mt-5">
+    <h1>My list of cocktails</h1>
+    <p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
+    <br>
+    <% @cocktails.each do |cocktail| %>
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    <% end %>
+  </div>
 
 </div>
+
