@@ -14,7 +14,7 @@
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>
           <div class="card">
-            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag cocktail.photo, :cloud_name => 'dousxlvzi' %>')">
+            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag cocktail.photo, cloud_name: 'dousxlvzi' %>')">
             </div>
             <!-- <h2> -->
                 <span><%= cocktail.name %></span>
