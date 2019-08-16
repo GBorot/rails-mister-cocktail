@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+
+.new-cocktail {
+  text-decoration: none;
+  color: #313131;
+  border: solid 2px #313131;
+  border-radius: 5px;
+  padding: 10px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #313131;
+  }
+}
+
+.index-container {
+  // width: 900px;
+  margin: 20px auto;
+}
