@@ -1,5 +1,6 @@
 class CocktailsController < ApplicationController
-def index
+
+  def index
     @cocktails = Cocktail.all
   end
 
@@ -23,6 +24,6 @@ def index
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
