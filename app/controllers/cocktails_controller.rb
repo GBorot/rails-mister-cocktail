@@ -1,11 +1,10 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
-
-  def index
+def index
     @cocktails = Cocktail.all
   end
 
   def show
+    @cocktail = Cocktail.find(params[:id])
   end
 
   def new
@@ -14,35 +13,16 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-
     if @cocktail.save
-      redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully created.'
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
   end
 
-  def edit
-  end
-
-  def update
-    @cocktail.update(cocktail_params)
-    redirect_to cocktail_path(@cocktail)
-  end
-
-  def destroy
-    @cocktail.destroy
-    redirect_to cocktails_path
-  end
-
   private
 
   def cocktail_params
-    # => Whitelisting
-    params.require(:cocktail).permit(:name, :ingredients, :doses)
-  end
-
-  def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
+    params.require(:cocktail).permit(:name)
   end
 end
